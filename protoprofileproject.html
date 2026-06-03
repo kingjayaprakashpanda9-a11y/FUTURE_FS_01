@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jayaprakash Panda | Portfolio</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            line-height:1.6;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        /* Navbar */
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 0;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:bold;
+            color:#38bdf8;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#38bdf8;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            min-height:90vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:50px;
+            flex-wrap:wrap;
+            padding:50px 0;
+        }
+
+        .hero-text{
+            flex:1;
+        }
+
+        .hero-text h1{
+            font-size:55px;
+            margin-bottom:10px;
+        }
+
+        .hero-text span{
+            color:#38bdf8;
+        }
+
+        /* Typing Animation */
+
+        .typing-text{
+            font-size:32px;
+            margin:15px 0;
+            min-height:45px;
+        }
+
+        #typing{
+            color:#38bdf8;
+            border-right:3px solid #38bdf8;
+            padding-right:5px;
+            animation:blink 0.7s infinite;
+        }
+
+        @keyframes blink{
+            50%{
+                border-color:transparent;
+            }
+        }
+
+        .hero-text p{
+            color:#cbd5e1;
+            font-size:18px;
+            max-width:600px;
+            margin-top:15px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:25px;
+            padding:12px 25px;
+            background:#38bdf8;
+            color:black;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:white;
+            transform:translateY(-3px);
+        }
+
+        .hero-image{
+            flex:1;
+            text-align:center;
+        }
+
+        .hero-image img{
+            width:350px;
+            border-radius:20px;
+            border:4px solid #38bdf8;
+            box-shadow:0 0 25px rgba(56,189,248,0.5);
+        }
+
+        /* Sections */
+
+        section{
+            padding:80px 0;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:40px;
+            margin-bottom:50px;
+            color:#38bdf8;
+        }
+
+        /* About */
+
+        .about{
+            max-width:900px;
+            margin:auto;
+            text-align:center;
+        }
+
+        .about p{
+            color:#cbd5e1;
+            font-size:18px;
+        }
+
+        /* Education */
+
+        .education-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+        }
+
+        .education-card{
+            background:#1e293b;
+            padding:25px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .education-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .education-card h3{
+            color:#38bdf8;
+            margin-bottom:10px;
+        }
+
+        .education-card h4{
+            margin-bottom:10px;
+        }
+
+        .education-card p{
+            color:#cbd5e1;
+        }
+
+        /* Skills */
+
+        .skill-box{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:15px;
+        }
+
+        .skill{
+            background:#1e293b;
+            padding:12px 20px;
+            border-radius:10px;
+            transition:0.3s;
+        }
+
+        .skill:hover{
+            background:#38bdf8;
+            color:black;
+            transform:translateY(-5px);
+        }
+
+        /* Experience */
+
+        .experience-card{
+            background:#1e293b;
+            padding:30px;
+            border-radius:15px;
+            max-width:700px;
+            margin:auto;
+            text-align:center;
+        }
+
+        .experience-card h3{
+            color:#38bdf8;
+        }
+
+        /* Contact */
+
+        .contact{
+            text-align:center;
+        }
+
+        .contact p{
+            margin:15px 0;
+            color:#cbd5e1;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#020617;
+            color:#94a3b8;
+        }
+
+        /* Responsive */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            .hero{
+                flex-direction:column-reverse;
+                text-align:center;
+            }
+
+            .hero-text h1{
+                font-size:40px;
+            }
+
+            .typing-text{
+                font-size:24px;
+            }
+
+            .hero-image img{
+                width:280px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Navbar -->
+
+        <nav>
+
+            <div class="logo">Jayaprakash</div>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>Hello, I'm <span>Jayaprakash Panda</span></h1>
+
+                <h2 class="typing-text">
+                    I'm a <span id="typing"></span>
+                </h2>
+
+                <p>
+                    Passionate Computer Science student focused on software engineering,
+                    web development, problem solving, and modern technologies.
+                </p>
+
+            </div>
+
+            <div class="hero-image">
+
+                <!-- Replace image name with your photo -->
+
+                <img src="c:\Users\kingj\OneDrive\Pictures\myphoto.jpg.jpeg" alt="Jayaprakash Panda">
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about">
+
+                <p>
+                    I am Jayaprakash Panda, a Computer Science & Engineering student
+                    passionate about full-stack development, software engineering,
+                    algorithms, and building modern web applications.
+                    I continuously improve my technical skills and explore new technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <div class="container">
+
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+
+                    <h3>B.Tech in Computer Science & Engineering</h3>
+
+                    <h4>C V Raman Global University</h4>
+
+                    <p>2023 - Present</p>
+
+                    <br>
+
+                    <p>
+                        Pursuing Bachelor of Technology with focus on
+                        Computer Science & Engineering,
+                        software engineering, algorithms,
+                        and full-stack web development.
+                    </p>
+
+                </div>
+
+                <div class="education-card">
+
+                    <h3>Higher Secondary Education</h3>
+
+                    <h4>Adyant Higher Secondary School, Bhubaneswar</h4>
+
+                    <p>2020 - 2022</p>
+
+                    <br>
+
+                    <p>
+                        Completed higher secondary education
+                        with focus on Science (PCM).
+                    </p>
+
+                </div>
+
+                <div class="education-card">
+
+                    <h3>Secondary Education</h3>
+
+                    <h4>Khambeswari High School, Khairabhadi</h4>
+
+                    <p>2018 - 2020</p>
+
+                    <br>
+
+                    <p>
+                        Completed secondary education with distinction
+                        and strong logical thinking skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skill-box">
+
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Java</div>
+                <div class="skill">React</div>
+                <div class="skill">DSA</div>
+                <div class="skill">SQL</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Experience -->
+
+    <section id="experience">
+
+        <div class="container">
+
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-card">
+
+                <h3>Full Stack Developer</h3>
+
+                <p>2026 - Present</p>
+
+                <br>
+
+                <p>
+                    Working on frontend and backend web applications
+                    while improving development skills and modern technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact">
+
+                <p>Email: jayaprakashpanda04@gmail.com</p>
+
+                <p>Open for collaboration and development opportunities.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Jayaprakash Panda. All Rights Reserved.</p>
+
+    </footer>
+
+    <!-- Typing Animation Script -->
+
+    <script>
+
+        const texts = [
+            "Problem Solver",
+            "Full Stack Developer",
+            "Java Developer",
+            "Frontend Developer"
+        ];
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+
+            const currentText = texts[textIndex];
+            const typingElement = document.getElementById("typing");
+
+            if (!isDeleting) {
+
+                typingElement.innerHTML =
+                    currentText.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentText.length) {
+
+                    isDeleting = true;
+
+                    setTimeout(typeEffect, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typingElement.innerHTML =
+                    currentText.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    isDeleting = false;
+
+                    textIndex++;
+
+                    if (textIndex === texts.length) {
+                        textIndex = 0;
+                    }
+                }
+            }
+
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+
+        typeEffect();
+
+    </script>
+
+</body>
+</html>
